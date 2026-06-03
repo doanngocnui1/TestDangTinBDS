@@ -1,0 +1,162 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  position: relative;
+  padding: 8rem 0 6rem;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(37, 99, 235, 0.05), transparent);
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.heroTitle span {
+  color: var(--primary);
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: var(--secondary-foreground);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.searchForm {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--background);
+  padding: 0.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .searchForm {
+    flex-direction: column;
+    padding: 1rem;
+  }
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 1.125rem;
+  background: transparent;
+  color: var(--foreground);
+  border-radius: var(--radius);
+}
+
+.searchInput:focus {
+  outline: none;
+  background-color: var(--secondary);
+}
+
+.searchBtn {
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  border-radius: var(--radius);
+}
+
+.featuredSection {
+  padding: 5rem 0;
+  background-color: var(--secondary);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* Card styles */
+.card {
+  background-color: var(--background);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+  border: 1px solid var(--border);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.cardImageWrapper {
+  position: relative;
+  height: 220px;
+  background-color: var(--border);
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+.cardPrice {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardLocation {
+  color: var(--secondary-foreground);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cardFeatures {
+  display: flex;
+  gap: 1.5rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  color: var(--secondary-foreground);
+  font-size: 0.875rem;
+}
+
+.cardFeature {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
