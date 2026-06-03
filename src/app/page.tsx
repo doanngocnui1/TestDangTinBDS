@@ -50,7 +50,7 @@ export default async function Home() {
                 <Link key={listing.id} href={`/listings/${listing.id}`} className={styles.card}>
                   <div className={styles.cardImageWrapper}>
                     <img 
-                      src={listing.images || "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"} 
+                      src={listing.images ? listing.images.split(',')[0] : "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"} 
                       alt={listing.title} 
                       className={styles.cardImage} 
                     />

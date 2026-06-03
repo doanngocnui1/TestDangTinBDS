@@ -24,13 +24,26 @@ export default async function ListingDetailPage({ params }: { params: Promise<{ 
     <div className={styles.container}>
       <div className={styles.imageGallery}>
         <img 
-          src={listing.images || "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"} 
+          src={listing.images ? listing.images.split(',')[0] : "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"} 
           alt={listing.title} 
           className={styles.mainImage}
         />
       </div>
+      
+      {listing.images && listing.images.split(',').length > 1 && (
+        <div className={styles.galleryGrid}>
+          {listing.images.split(',').slice(1).map((img, idx) => (
+            <img 
+              key={idx} 
+              src={img} 
+              alt={`${listing.title} - ảnh ${idx + 2}`} 
+              className={styles.galleryItem} 
+            />
+          ))}
+        </div>
+      )}
 
-      <div className={styles.header}>
+      <div className={styles.header} style={{marginTop: '2rem'}}>
         <div>
           <h1 className={styles.title}>{listing.title}</h1>
           <div className={styles.location}>

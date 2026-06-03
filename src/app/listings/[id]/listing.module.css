@@ -19,6 +19,26 @@
   object-fit: cover;
 }
 
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.galleryItem {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transition: transform 0.2s;
+}
+
+.galleryItem:hover {
+  transform: scale(1.02);
+}
+
 .header {
   display: flex;
   justify-content: space-between;
